@@ -1,0 +1,20 @@
+import time, mcpi.minecraft as minecraft
+mc = minecraft.Minecraft.create()
+
+time.sleep(2)
+mc.postToChat("Teleporting in 3")
+time.sleep(1)
+mc.postToChat("2")
+time.sleep(1)
+mc.postToChat("1")
+time.sleep(1)
+mc.postToChat("Commencing Teleportation")
+time.sleep(1)
+while True:
+    mc.player.setPos(50,50,50)
+    time.sleep(1)
+    mc.player.setPos(69,69,69)
+    time.sleep(1)
+    mc.player.setPos(35,40,45)
+    time.sleep(1)
+mc.postToChat("Telepotation Complete!")
