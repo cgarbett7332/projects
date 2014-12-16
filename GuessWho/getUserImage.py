@@ -3,6 +3,7 @@
 
 import picamera
 import time
+import json
 
 
             
@@ -57,6 +58,7 @@ def getCharProfile():
             check = True
     #glasses
     glasses = input
+
     
         
 
@@ -70,5 +72,22 @@ def getCharProfile():
 
 
 
+def LoadData():
+    try:
+        with open ("PeopleData",mode='rb') as file:
+            people = json.load(file)
+    except IOError:
+        print("ERROR")
+        people=[]
+    return people
 
-#getCharProfile()
+def StoreData():
+    person = getCharProfile()
+    people.append(person)
+    with open ("PeopleData",mode='wb') as file:
+        json.dump(people,file)
+
+
+    
+people = LoadData()
+StoreData()
