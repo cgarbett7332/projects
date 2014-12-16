@@ -58,6 +58,7 @@ def getCharProfile():
             check = True
     #glasses
     glasses = input
+    if input = 
 
     
         
@@ -74,7 +75,7 @@ def getCharProfile():
 
 def LoadData():
     try:
-        with open ("PeopleData",mode='rb') as file:
+        with open ("PeopleData",mode='r') as file:
             people = json.load(file)
     except IOError:
         print("ERROR")
@@ -84,7 +85,7 @@ def LoadData():
 def StoreData():
     person = getCharProfile()
     people.append(person)
-    with open ("PeopleData",mode='wb') as file:
+    with open ("PeopleData",mode='w') as file:
         json.dump(people,file)
 
 
