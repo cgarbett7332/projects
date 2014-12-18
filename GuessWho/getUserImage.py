@@ -33,32 +33,41 @@ def getCharProfile(): # this code defines the function getCharProfile
         correct = input("Your first name is {0}, is that correct?".format(Fname))
         if correct.lower()=="yes": # if the user says yes, it will go to the next question, if not, it will ask what their first name is again
             check = True
+
     filename = getUserImage(Fname)
-    # this part asks about your hair colour
-    check=False
-    while check == False:
-        hair = ""
-        while not(hair in ["black","blond","brown","ginger"]): # if the input isn't any hair colours on this list, it will ask the question again until it is
-            hair = input("what is your hair colour?") # this will ask the user what their hair colour is
-        correct = input("your hair is {0}, is that correct?".format(hair))
-        if correct.lower()=="yes": # if the user says yes, it will go on to the next question, if not, it will ask what their hair colour is again
-            check = True
-    # this part asks about your eye colour
-    check=False
-    while check == False:
-        eye = ""
-        while not(eye in ["blue","brown","green"]): # if the input isn't in this list, it will ask again until it is.
-            eye = input("what is your eye colour?") # this will ask the user what their eye colour is.
-        correct = input("your eyes is {0}, is that correct?".format(eye))
-        if correct.lower()=="yes": # if the user says yes, it will go on to the next question, if not, it will ask what your eye colour is again.
-            check = True
+
+    # this part asks what your hair colour is
+    hair = ""
+    while not(hair in ["black","blond","brown","ginger"]): # if the input isn't any hair colours on this list, it will ask the question again until it is
+        hair = input("What is your hair colour?") # this will ask the user what their hair colour is
+
+    # this part asks about your eye colour 
+    eye = ""
+    while not(eye in ["blue","brown","green"]): # if the input isn't in this list, it will ask again until it is.
+        eye = input("What is your eye colour?") # this will ask the user what their eye colour is.
+        
     # this part asks if you have glasses or not
     glasses = ""
     while not(glasses in ["yes","no"]):
         glasses = input("Do you wear glasses?")
+
+    # this part asks what you gender is
+    gender = ""
+    while not(gender in ["male","female"]):
+        gender = input("What is your gender?")
+
+    # this part asks if you wear a hat or not
+    hat = ""
+    while not(hat in ["yes","no"]):
+        hat = input("Do you wear a hat?")
+
+    # this part asks if you have any facial hair
+    facial_hair = ""
+    while not(facial_hair in ["yes","no"]):
+        facial_hair = input("Do you have any facial hair?")
        
         
-    return [Fname, filename, hair, eye, glasses]
+    return [Fname, filename, hair, eye, glasses, gender, hat, facial_hair]
 
 def LoadData(): # this defines the function LoadData()
     try:
@@ -77,4 +86,6 @@ def StoreData(): # this defines the function StoreData()
    
 people = LoadData()
 print(people)
-StoreData()
+while len(people)<24:
+    StoreData()
+    print("captured")
