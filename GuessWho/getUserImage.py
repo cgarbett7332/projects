@@ -53,8 +53,12 @@ def getCharProfile(): # this code defines the function getCharProfile
         if correct.lower()=="yes": # if the user says yes, it will go on to the next question, if not, it will ask what your eye colour is again.
             check = True
     # this part asks if you have glasses or not
-    
-    return [Fname, filename, hair, eye]
+    glasses = ""
+    while not(glasses in ["yes","no"]):
+        glasses = input("Do you wear glasses?")
+       
+        
+    return [Fname, filename, hair, eye, glasses]
 
 def LoadData(): # this defines the function LoadData()
     try:
@@ -72,4 +76,5 @@ def StoreData(): # this defines the function StoreData()
         json.dump(people,file)
    
 people = LoadData()
+print(people)
 StoreData()
