@@ -1,8 +1,8 @@
-import mcpi.minecraft as minecraft
-import time
-mc = minecraft.Minecraft.create()
+import mcpi.minecraft as minecraft # imports mcpi.minecraft and renames it minecraft
+import time # imports time commands
+mc = minecraft.Minecraft.create() # this connects to a minecraft world so the program can be run
 
-mc.setBlocks(-50,-1,-50,50,65,50,0)
+mc.setBlocks(-50,-1,-50,50,65,50,0) # cuts out an area to work in.
 
 time.sleep(3)
 
