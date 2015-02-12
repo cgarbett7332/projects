@@ -45,17 +45,19 @@ while True:
     print ("the rain count is: {0}".format(raincount *0.2794))
     print ("the wind count is: {0}".format(windcount))
 
-############################################
+####################################################################
+
+
 
 def StoreRainCount():
     raincount = bucket_tipped(channel)
-    raincount.append(input)
+    raincount.append()
     with open ("raincount.txt",mode='w') as file:
         json.dump(raincount,file)
 
 def StoreWindCount():
     windcount = spin(channel)
-    windcount.append(input)
+    windcount.append()
     with open ("windcount.txt",mode='w') as file:
         json.dump(windcount,file)
 
