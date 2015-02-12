@@ -8,7 +8,7 @@ windcount = 0
 def spin(channel):
     global windcount
     windcount +=1
-    print (windcount)
+    
 
 def CalcSpeed():
     global windcount
@@ -31,7 +31,7 @@ raincount = 0
 def bucket_tipped(channel):
     global raincount
     raincount += 1
-    print (raincount * 0.2794)
+    
 
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(rainpin, GPIO.IN, GPIO.PUD_UP)
@@ -40,6 +40,6 @@ GPIO.add_event_detect(rainpin, GPIO.FALLING, callback=bucket_tipped, bouncetime=
 input("Press Enter to start...")
 while True:
     count = 0
-    time.sleep(3)
-    print (raincount *0.2794)
-    print (windcount)
+    time.sleep(5)
+    print ("the rain count is: {0}".format(raincount *0.2794))
+    print ("the wind count is: {0}".format(windcount))
